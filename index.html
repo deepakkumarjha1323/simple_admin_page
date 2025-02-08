@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DashBoard</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="sidebar">
+                <div id="sidenav-menu">
+                    <button id="register-btn" onclick="tab('register-btn', 'signin-btn', 'register', 'signin')">Register</button>
+                    <button id="signin-btn" onclick="tab('signin-btn', 'register-btn', 'signin', 'register')">SignIn</button>
+                </div>
+            </div>
+            <div id="section">
+                <nav id="topnav">
+                    <div id="toolbar">
+                        <button onclick="toggle()" id="toggler">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <h1 id="brand-name">Programming Sites</h1>
+                    </div>
+                    
+                </nav>
+                <div id="content">
+                    <div id="register">
+                        <h1 id="label">Register</h1>
+                        <div id="card" class="animate__animated animate__slideInLeft animate__faster">
+                            <form action="" name="signupForm" onsubmit="signUp(event)" autocomplete="off">
+                                <input type="text" name="fullname" placeholder="FullName" oninput="onInputValidation(this, 'fullnameMessage')" />
+                                <p id="fullnameMessage"></p>
+                                <input type="email" name="email" placeholder="example@gmail.com" oninput="onInputValidation(this, 'emailMessage')" />
+                                <p id="emailMessage"></p>
+                                <div id="password-container">
+                                    <input id="signin-password" type="password" name="password" placeholder="*******" oninput="onInputValidation(this, 'passwordMessage')" />
+                                    <button type="button" onclick="togglePassword('signin-password', 'signin-toggleIcon')">
+                                        <i class="fa-regular fa-eye" id="signin-toggleIcon"></i>
+                                    </button>
+                                </div>
+                                <p id="passwordMessage"></p>
+                                <button type="submit">Register Now</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="signin">
+                        <h1 id="label">SignIn</h1>
+                        <div id="card" class="animate__animated animate__slideInLeft animate__faster">
+                            <form action="" name="loginForm" onsubmit="login(event)">
+                                <input type="email" name="email" placeholder="Email" oninput="onInputValidation(this, 'login-emailMessage')" />
+                                <p id="login-emailMessage"></p>
+                                <div id="password-container">
+                                    <input id="login-password" type="password" name="password" placeholder="Password" oninput="onInputValidation(this, 'login-passwordMessage')" />
+                                    <button type="button" onclick="togglePassword('login-password', 'login-toggleIcon')">
+                                        <i class="fa-regular fa-eye" id="login-toggleIcon"></i>
+                                    </button>
+                                </div>
+                                <p id="login-passwordMessage"></p>
+                                <button type="submit" >LogIn</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
